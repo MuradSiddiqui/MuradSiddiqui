@@ -12,8 +12,9 @@
 ```javascript
 const murad = {
   nationality : "Pakistani"
-  code: [Javascript, Typescript, NextJS, ReactJS, NodeJS],
-  tools: [TailwindCSS, ShadCN, Neo4j, SQL, Supabase, Snowflake],
+  role: "Software Engineer", 
+  code: [Javascript, Typescript, NextJS, ReactJS, NodeJS, Python],
+  tools: [TailwindCSS, ShadCN, Neo4j, SQL, Supabase, Snowflake, Qdrant],
   architecture: ["microservices", "event-driven", "design system pattern"],
   portfolio : "https://www.muradsiddiqui.me/"
 }
