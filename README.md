@@ -11,12 +11,12 @@
 
 ```javascript
 const Murad_Siddiqui = {
-  nationality : "Pakistani"
+  nationality: "Pakistani", 
   role: "Software Engineer", 
-  code: [Javascript, Typescript, NextJS, ReactJS, NodeJS, Python],
-  tools: [TailwindCSS, ShadCN, Neo4j, SQL, Supabase, Snowflake, Qdrant],
+  code: ["Javascript", "Typescript", "NextJS", "ReactJS", "NodeJS", "Python"], 
+  tools: ["TailwindCSS", "ShadCN", "Neo4j", "SQL", "Supabase", "Snowflake", "Qdrant"],  
   architecture: ["microservices", "event-driven", "design system pattern"],
-  portfolio : "https://www.muradsiddiqui.me/"
+  portfolio: "https://www.muradsiddiqui.me/"
 }
 ```
 ![](./profile-3d-contrib/profile-night-green.svg)
