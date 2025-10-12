@@ -10,7 +10,7 @@
 ### About Me...
 
 ```javascript
-const murad = {
+const Murad_Siddiqui = {
   nationality : "Pakistani"
   role: "Software Engineer", 
   code: [Javascript, Typescript, NextJS, ReactJS, NodeJS, Python],
