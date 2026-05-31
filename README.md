@@ -7,15 +7,11 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/murad-siddiqui/)
 [![Portfolio](https://img.shields.io/badge/Portfolio-10B981?style=for-the-badge&logo=google-chrome&logoColor=white)](https://www.muradsiddiqui.me/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/MuradSiddiqui)
-[![Followers](https://img.shields.io/github/followers/muradsiddiqui?label=Followers&style=for-the-badge&color=10B981&logo=github)](https://github.com/MuradSiddiqui)
+[![Followers](https://img.shields.io/badge/Followers-10B981?style=for-the-badge&logo=github&logoColor=white)](https://github.com/MuradSiddiqui)
 
 </div>
 
-<br/>
-
-<table>
-<tr>
-<td width="60%" valign="top">
+<img align="right" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHU4Z3BmdmJvcmY2emViaGg2cm1lYW83YnhuenhpMThpNXg4azVkcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/78XCFBGOlS6keY1Bil/giphy.gif" width="220" alt="Coding animation" />
 
 ### About Me
 
@@ -30,16 +26,7 @@ const Murad_Siddiqui = {
 }
 ```
 
-</td>
-<td width="40%" valign="top" align="center">
-
-<img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHU4Z3BmdmJvcmY2emViaGg2cm1lYW83YnhuenhpMThpNXg4azVkcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/78XCFBGOlS6keY1Bil/giphy.gif" width="220" alt="Coding animation" />
-
-</td>
-</tr>
-</table>
-
-<br/>
+<br clear="both"/>
 
 ### Tech Stack
 
@@ -68,8 +55,7 @@ const Murad_Siddiqui = {
 
 ### GitHub Activity
 
-<img src="https://github-readme-stats.vercel.app/api?username=MuradSiddiqui&show_icons=true&hide_border=true&bg_color=0D1117&title_color=10B981&icon_color=10B981&text_color=C9D1D9&ring_color=10B981" height="165" alt="GitHub stats" />
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=MuradSiddiqui&hide_border=true&background=0D1117&stroke=30363D&ring=10B981&fire=10B981&currStreakLabel=10B981&sideLabels=C9D1D9&dates=8B949E" height="165" alt="GitHub streak" />
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=MuradSiddiqui&hide_border=true&background=0D1117&stroke=30363D&ring=10B981&fire=10B981&currStreakNum=10B981&currStreakLabel=10B981&sideNums=10B981&sideLabels=E6EDF3&dates=8B949E" alt="GitHub streak" />
 
 <br/><br/>
 
