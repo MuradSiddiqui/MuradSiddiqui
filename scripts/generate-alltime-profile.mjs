@@ -127,9 +127,6 @@ async function fetchAllTimeUserInfo(username, token) {
     query($login: String!) {
       user(login: $login) {
         createdAt
-        contributionsCollection {
-          contributionYears
-        }
         repositories(first: 100, ownerAffiliations: OWNER) {
           nodes {
             forkCount
@@ -141,11 +138,14 @@ async function fetchAllTimeUserInfo(username, token) {
   `;
 
   const base = await graphql(token, baseQuery, { login: username });
-  const years = [...base.data.user.contributionsCollection.contributionYears].sort(
-    (a, b) => a - b,
-  );
   const createdAt = base.data.user.createdAt.slice(0, 10);
   const today = new Date().toISOString().slice(0, 10);
+  const startYear = new Date(createdAt).getFullYear();
+  const endYear = new Date().getFullYear();
+  const years = Array.from(
+    { length: endYear - startYear + 1 },
+    (_, index) => startYear + index,
+  );
 
   const daysByDate = new Map();
   const collections = [];
@@ -253,6 +253,20 @@ async function fetchAllTimeUserInfo(username, token) {
   };
 }
 
+function postProcessSvg(svg, totalContributions) {
+  let updated = svg.replace(
+    /(<text[^>]*class="fill-strong"[^>]*>)[\d,]+(<\/text>)/,
+    `$1${totalContributions}$2`,
+  );
+
+  updated = updated.replace(
+    /<text[^>]*>\d{4}-\d{2}-\d{2} \/ \d{4}-\d{2}-\d{2}<\/text>/,
+    '',
+  );
+
+  return updated;
+}
+
 async function main() {
   const token = process.env.GITHUB_TOKEN;
   const username = process.env.USERNAME;
@@ -278,6 +292,12 @@ async function main() {
       stdio: 'inherit',
     },
   );
+
+  const svg = postProcessSvg(
+    fs.readFileSync(outputPath, 'utf8'),
+    userInfo.totalContributions,
+  );
+  fs.writeFileSync(outputPath, svg);
 
   console.log(
     `Generated ${outputPath} with ${userInfo.totalContributions} total contributions across ${userInfo.contributionCalendar.length} days`,
