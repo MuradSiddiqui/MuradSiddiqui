@@ -8,6 +8,7 @@ const repoRoot = path.resolve(__dirname, '..');
 const toolDir = path.join(repoRoot, '.cache/github-profile-3d-contrib');
 const outputPath = path.join(repoRoot, 'profile-3d-contrib/profile-night-green.svg');
 const userInfoPath = path.join(repoRoot, '.cache/user-info.json');
+const renderScriptPath = path.join(toolDir, 'alltime-render.ts');
 
 const levelMap = {
   NONE: 0,
@@ -16,6 +17,44 @@ const levelMap = {
   THIRD_QUARTILE: 3,
   FOURTH_QUARTILE: 4,
 };
+
+const renderScriptSource = `import * as fs from 'fs';
+import * as path from 'path';
+import * as create from './src/create-svg';
+import * as template from './src/color-template';
+import * as type from './src/type';
+
+const userInfoPath = process.env.USER_INFO_PATH;
+const outputPath = process.argv[2];
+
+if (!userInfoPath || !outputPath) {
+  console.error('USER_INFO_PATH and output path are required');
+  process.exit(1);
+}
+
+const raw = JSON.parse(fs.readFileSync(userInfoPath, 'utf8')) as type.UserInfo & {
+  contributionCalendar: Array<{
+    contributionCount: number;
+    contributionLevel: number;
+    date: string;
+  }>;
+};
+
+const userInfo: type.UserInfo = {
+  ...raw,
+  contributionCalendar: raw.contributionCalendar.map((day) => ({
+    ...day,
+    date: new Date(day.date),
+  })),
+};
+
+let svg = create.createSvg(userInfo, template.NightGreenSettings, true);
+
+svg = svg.replace(/<text[^>]*>\\d{4}-\\d{2}-\\d{2} \\/ \\d{4}-\\d{2}-\\d{2}<\\/text>/, '');
+
+fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+fs.writeFileSync(outputPath, svg);
+`;
 
 async function graphql(token, query, variables = {}) {
   const response = await fetch('https://api.github.com/graphql', {
@@ -53,6 +92,8 @@ function ensureTool() {
   if (scaledSource !== contribSource) {
     fs.writeFileSync(contribFile, scaledSource);
   }
+
+  fs.writeFileSync(renderScriptPath, renderScriptSource);
 }
 
 function mergeLanguages(collections) {
@@ -227,13 +268,12 @@ async function main() {
   fs.writeFileSync(userInfoPath, JSON.stringify(userInfo));
 
   execSync(
-    `npx ts-node --project "${path.join(toolDir, 'tsconfig.json')}" "${path.join(repoRoot, 'scripts/render-night-green.ts')}" "${outputPath}"`,
+    `npx ts-node --transpile-only "${renderScriptPath}" "${outputPath}"`,
     {
-      cwd: repoRoot,
+      cwd: toolDir,
       env: {
         ...process.env,
         USER_INFO_PATH: userInfoPath,
-        NODE_PATH: path.join(toolDir, 'node_modules'),
       },
       stdio: 'inherit',
     },

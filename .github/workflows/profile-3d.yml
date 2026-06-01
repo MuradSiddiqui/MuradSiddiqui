@@ -20,7 +20,7 @@ jobs:
           USERNAME: ${{ github.repository_owner }}
       - uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: "24"
       - name: Regenerate all-time night-green graph
         run: node scripts/generate-alltime-profile.mjs
         env:
