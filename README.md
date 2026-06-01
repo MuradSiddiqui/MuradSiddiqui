@@ -55,10 +55,10 @@ const Murad_Siddiqui = {
 
 ### GitHub Activity
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=MuradSiddiqui&hide_border=true&background=0D1117&stroke=30363D&ring=10B981&fire=10B981&currStreakNum=10B981&currStreakLabel=10B981&sideNums=10B981&sideLabels=E6EDF3&dates=8B949E" alt="GitHub streak" />
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=MuradSiddiqui&hide_border=true&background=0D1117&stroke=30363D&ring=10B981&fire=10B981&currStreakNum=10B981&currStreakLabel=10B981&sideNums=10B981&sideLabels=E6EDF3&dates=8B949E" alt="GitHub streak" style="pointer-events: none;" />
 
 <br/><br/>
 
-![](./profile-3d-contrib/profile-night-green.svg)
+<img src="./profile-3d-contrib/profile-night-green.svg" alt="GitHub 3D contributions" style="pointer-events: none;" />
 
 </div>
