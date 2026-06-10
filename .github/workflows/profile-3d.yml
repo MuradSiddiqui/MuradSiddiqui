@@ -18,6 +18,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
+      - name: Fetch streak SVG
+        run: |
+          mkdir -p profile-3d-contrib
+          curl -s "https://github-readme-streak-stats.herokuapp.com/?user=${{ github.repository_owner }}&hide_border=true&background=0D1117&stroke=30363D&ring=10B981&fire=10B981&currStreakNum=10B981&currStreakLabel=10B981&sideNums=10B981&sideLabels=E6EDF3&dates=8B949E&v=$(date +%s)" -o profile-3d-contrib/streak.svg || true
       - name: Commit & Push
         run: |
           git config user.name github-actions
