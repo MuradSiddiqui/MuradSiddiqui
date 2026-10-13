@@ -5,7 +5,7 @@
 <br/>
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/murad-siddiqui/)
-[![Portfolio](https://img.shields.io/badge/Portfolio-10B981?style=for-the-badge&logo=google-chrome&logoColor=white)](https://www.muradsiddiqui.me/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-10B981?style=for-the-badge&logo=google-chrome&logoColor=white)](https://murad-portfolio-psi.vercel.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/MuradSiddiqui)
 [![Followers](https://img.shields.io/badge/Followers-10B981?style=for-the-badge&logo=github&logoColor=white)](https://github.com/MuradSiddiqui)
 
@@ -22,7 +22,7 @@ const Murad_Siddiqui = {
   code: ["Javascript", "Typescript", "NextJS", "ReactJS", "NodeJS", "Python"], 
   tools: ["TailwindCSS", "ShadCN", "Neo4j", "SQL", "Supabase", "Snowflake", "Qdrant"],  
   architecture: ["microservices", "event-driven", "design system pattern"],
-  portfolio: "https://www.muradsiddiqui.me/"
+  portfolio: "https://murad-portfolio-psi.vercel.app/"
 }
 ```
 
